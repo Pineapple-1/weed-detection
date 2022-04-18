@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+code {
+  font-family: 'Lato', sans-serif;
+
+}
+
+::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(116, 113, 113, 0.5);
+}

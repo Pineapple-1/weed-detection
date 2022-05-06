@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File
 from fastapi.param_functions import Path
-from segmentation import get_yolov5, get_image_from_bytes
+from segmentation import get_yolov5, get_image_from_bytes, get_pest_yolov5
 from starlette.responses import Response
 import io
 from PIL import Image
@@ -13,8 +13,9 @@ import random
 
 
 model = get_yolov5()
+pest_model = get_pest_yolov5()
 IMAGEDIR = "fastapi-images/"
-
+mylist = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r']
 
 app = FastAPI(
     title="Object Detection Api",
@@ -76,15 +77,51 @@ async def detect_return_base64_img(file:bytes = File(...) ):
         bytes_io = io.BytesIO()
         img_base64 = Image.fromarray(img)
         img_base64.save(bytes_io, format="jpeg")
-    
-    mylist = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r']
-    rand = random.choice(mylist)
+        rand = random.choice(mylist)
+        
     img_base64.save(IMAGEDIR+rand+'.jpeg')
     path = f"{IMAGEDIR}{rand}"
     return dict(path=rand)
     
+@app.post("/object-to-img-pest")
+async def detect_return_base64_img(file:bytes = File(...) ):
+    input_image = get_image_from_bytes(file)
+    results = pest_model(input_image)
+    results.render()  # updates results.imgs with boxes and labels
+    for img in results.imgs:
+        bytes_io = io.BytesIO()
+        img_base64 = Image.fromarray(img)
+        img_base64.save(bytes_io, format="jpeg")
+
+    rand = random.choice(mylist)
+    img_base64.save(IMAGEDIR+rand+'.jpeg')
+    path = f"{IMAGEDIR}{rand}"
+    return dict(path=rand)
+
+@app.post("/object-to-json-pest")
+async def detect_pest_return_json_result(file: bytes = File(...)):
+    input_image = get_image_from_bytes(file)
+    results = pest_model(input_image)
+    detect_res = results.pandas().xyxy[0].to_json(orient="records")
+    detect_res = json.loads(detect_res)
+    return {"result": detect_res}
+
+
 @app.get("/img/{image_filename}")
 def img(image_filename:str):
     return FileResponse("fastapi-images/"+image_filename+".jpeg")
 
+@app.get("/products/insectisides")
+def product_list():
+    file = open('data.json')
+    json_data = json.load(file)
+    file.close()
+    return json_data
+
+@app.get("/products/herbisides")
+def product_list():
+    file = open('herbiside.json')
+    json_data = json.load(file)
+    file.close()
+    return json_data
 

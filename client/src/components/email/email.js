@@ -2,16 +2,12 @@ import React from "react";
 import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
 
-export const Email = ({ per }) => {
+export const Email = ({ Message,Subject }) => {
   var templateParams = {
-    subject: "Crop Report",
+    subject: Subject,
     name: "abdulrehman",
     email: "abdulrehman.ajmal@outlook.com",
-    message: `WEED PERCENTAGE ${(per * 100).toFixed(0)}%  ${
-      (per * 100).toFixed(0) > 40
-        ? "TAKE ACTIONS TO CONTROL WEED !!!"
-        : "NO ACTIONS NEEDED."
-    }`,
+    message: Message,
   };
 
   const sendEmail = (e) => {
@@ -37,11 +33,11 @@ export const Email = ({ per }) => {
   return (
     <Button
       variant="contained"
-      size="medium"
+      size={Subject==="Crop Report"?"medium":"small"}
       sx={{ mt: 2, textDecoration: "none" }}
       onClick={sendEmail}
     >
-      Send Report
+      {Subject==="Crop Report"?"Send Report":"Recommend"}
     </Button>
   );
 };

@@ -3,10 +3,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Image from "../../assets/8400.jpg";
+import Spray from '../../assets/spray.jpg'
 import Box from "@material-ui/core/Box";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
+import Image from "../../assets/farm.jpg";
+
 
 const Home = () => {
   
@@ -17,13 +19,13 @@ const Home = () => {
         <Grid
           container
           direction="row"
-          justifyContent="flex-start"
+          justifyContent="center"
           alignItems="center"
           spacing={3}
         >
-          <Grid item md={6}>
-            <Typography variant="h4" sx={{ color: "#1c54b2", mt: 10 }}>
-              Weed Detection For Crop Health Monitoring System
+          <Grid item md={5.7}>
+            <Typography variant="h5" sx={{ color: "#1c54b2", mt: 10 }}>
+              Weed Detection
             </Typography>
             <p>
               Project module is for detecting weed from images that contain both crops and
@@ -31,23 +33,57 @@ const Home = () => {
             </p>
 
             <Button
-              variant="outlined"
-              size="medium"
-              sx={{ mt: 1, textDecoration: "none" }}
+              color="primary" variant="contained" 
+              size="small"
+              sx={{ mt: 1}}
             >
-              <Link sx={{ textDecoration: "none" }} href="/Detection">
+              <Link sx={{ textDecoration: "none",color: '#ffffff' }} href="/Detection">
                 {" "}
                 Try It Out{" "}
               </Link>
             </Button>
           </Grid>
 
-          <Grid item md={6}>
-            <Box sx={{ mt: 6 }}>
-              <img src={Image} alt="helo" style={{ maxWidth: "550px" }} />
+          <Grid item md={6.3}>
+            <Box sx={{ mt: 3 }}>
+              <img src={Image} alt="helo" style={{ maxWidth: "430px" }} />
             </Box>
           </Grid>
+
+
+
+          <Grid item md={6.3}>
+            <Box >
+              <img src={Spray} alt="helo" style={{ maxWidth: "435px" }} />
+            </Box>
+          </Grid>
+
+          <Grid item md={5.7}>
+            <Typography variant="h5" sx={{ color: "#1c54b2", mt: 7.5 }}>
+              Pest Detection
+            </Typography>
+            <p>
+              Project module is for detecting weed from images that contain both crops and
+              weeds.
+            </p>
+
+            <Button
+              color="primary" variant="contained" 
+              size="small"
+              sx={{ mt: 1, textDecoration: "none"}}
+            >
+              <Link sx={{ textDecoration: "none",color: '#ffffff' }} href="/Pest">
+                {" "}
+                Try It Out{" "}
+              </Link>
+            </Button>
+          </Grid>
+
+
+
+
         </Grid>
+
       </Container>
     </React.Fragment>
   );

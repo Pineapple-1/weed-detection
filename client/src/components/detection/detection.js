@@ -5,7 +5,9 @@ import Post from "../post/post";
 import api from "../../api/index";
 import Card from '../card/card'
 import Grid from "@mui/material/Grid";
+import Table from "../table/table"
 import Typography from '@mui/material/Typography';
+import Fork from '../../assets/loading.PNG'
 
 
 export default function Detection() {
@@ -13,10 +15,13 @@ export default function Detection() {
   const [Data, setData] = useState("");
   const [raw, setRaw] = useState('');
 
+
   useEffect(() => {
     async function fetchData() {
       let formData = new FormData();
       formData.append("file", File);
+
+
       const res = await api
         .post("object-to-img/", formData, {
           headers: { "content-type": "multipart/form-data" },
@@ -25,9 +30,11 @@ export default function Detection() {
         .post("/object-to-json", formData, {
           headers: { "content-type": "multipart/form-data" },
         })
+
        
       console.log(res);
       console.log(response)
+
       setData(res.data);
       setRaw(response.data.result)
     }
@@ -49,7 +56,7 @@ export default function Detection() {
           direction="row"
           justifyContent="space-evenly"
           alignItems="center"
-          spacing={2}
+          spacing={1}
           sx={{mt:1}}
         >
           <Grid item md={9.6}>
@@ -61,7 +68,11 @@ export default function Detection() {
 
           </Grid>
           </Grid>
+          
+         
+
           {raw?<Card raw={raw}/>:null}
+
           {Data?
           (<Grid
           container
@@ -83,10 +94,21 @@ export default function Detection() {
             Output
           </Typography>
           <img  alt="helo"  src={url+Data?.path}/>
+
           </Grid>
+
+
+
         </Grid>):null}
-         
+        <center>
           
+        {File?null:<img  alt="fork"  src={Fork} style={{maxWidth:"500px",objectFit: "contain" }}/>}
+
+
+        </center>
+        
+
+
         </Container>
       </main>
     </React.Fragment>

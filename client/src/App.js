@@ -27,7 +27,6 @@ function App() {
   <CssBaseline/>
       <ThemeProvider theme={theme}>
         <AppBar />
-
         <Router />
  
       </ThemeProvider>

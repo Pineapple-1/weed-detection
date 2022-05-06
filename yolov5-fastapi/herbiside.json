@@ -1,0 +1,56 @@
+{
+  "products": [
+
+
+    {
+      "name": "Stomp 455CS",
+      "chemical": "Pendimethalin",
+      "crop": ["Cotton" ,"Potato" ,"Onion", "Peas"],
+      "dose": "1000 ml",
+      "description": "STOMP is a selective broad-spectrum herbicide recommended for use in certain fruit crops and onions for the control of annual grasses and broadleaf weeds. Following application of STOMP to the soil and its absorption by the plant, both root and shoot growth are inhibited in susceptible plants. Affected plants die shortly after germination or following emergence from the soil. STOMP inhibits microtubule formation in the plant cell, which results in the disruption of cell division and cell elongation in shoot and root meristems of susceptible plants. The germination of weeds is unaffected growth inhibition and subsequent death occur following germination of the seed or shortly after emergence from the soil. The primary site of action of STOMP is at the growing points of the plant. Differential susceptibility is caused by differences in germination depth and exposure of growing points to direct applications. Broad-spectrum herbicide with a wide range of crop applications. Benefits from action against both grass and broadleaf weeds, with a wide window of application from pre-plant incorporation through to post-emergence application (monocot crops only).",
+      "pest":["BLW", "Grasses"]
+    },
+
+    {
+      "name": "Aim 40DF",
+      "chemical": "Carfentrazone-ethyl",
+      "crop": ["Wheat"],
+      "dose": "20 g",
+      "description": "Aim 40% DF herbicide is a fast acting, non residual herbicide that tackles the toughest broadleaf weeds like Convolvulus arvensis. Formulated as a low use rate, easily tank mixed liquid, Aim is labeled for weed control in nearly every row crop and many high-value specialty crops.",
+      "pest": ["Broad Leaf Weeds"]
+    },
+    {
+      "name": "Machete 60EC",
+      "chemical": "Butachlor",
+      "crop": ["Rice"],
+      "dose": "800 ml",
+      "description": "Machete 60% EC is a selective systemic herbicide effective against a wide range of both annual grass weeds and certain broadleaf weeds. It is applied prior to weed emergence, or in very early stage pre-weed emergence in Rice crops. Machete is easy to use product with broad application window.",
+      "pest": ["BLW", "Grasses"]
+    },
+    {
+      "name": "OUTPUT 12EC",
+      "chemical": "Flumetralin",
+      "crop": ["Tobacco"],
+      "dose": "250-300 ml",
+      "description": "Used to control axillary bud (sucker) growth after the floral portion of tobacco plants have been topped.",
+      "pest": ["Tobacco Suckers"]
+    },
+    {
+      "name": "Pallas 45OD",
+      "chemical": "Pyroxsulam",
+      "crop": ["Wheat"],
+      "dose": "150 ml",
+      "description":"Pallas herbicide offers effective post-emergence broadleaf and grass weed control in a single product in Wheat crop. It delivers superior crop safety, a wide window of application and crop rotational flexibility.",
+      "pest": ["BLW", "Grasses"]
+    },
+
+    {
+      "name": "Winsta 30WP",
+      "chemical": "BispyribacNa",
+      "crop": ["Rice"],
+      "dose": "60 g",
+      "description": "Winsta is a premix of two chemicals, Bispyribac Sodium nad Bensulfuron Methyl .Biochemistry Branched chain amino acid synthesis (ALS or AHAS) inhibitor. Acts by inhibiting biosynthesis of the essential amino acids valine and isoleucine, hence stopping cell division and plant growth. Selectivity is due to rapid metabolism in the crop. Metabolic basis of selectivity reviewed (M. K. Koeppe & H. M. Brown, Agro-Food-Industry, 6, 9-14 (1995)). Mode of action Selective systemic herbicide, absorbed by the foliage and roots, with rapid translocation to the meristematic tissues. Uses Selective pre and post-emergence control of annual and perennial weeds and sedges.",
+      "pest": ["Post Emergence Weeds Complex"]
+    }
+  ]
+}

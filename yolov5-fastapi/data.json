@@ -1,0 +1,62 @@
+{
+  "products": [
+
+    {
+      "name": "Admiral 10EC",
+      "chemical": "Pyriproxyfen",
+      "crop": ["Cotton","Vegetables ","Orchards", "Tobacco"],
+      "dose": "200 ml",
+      "description": " Admiral is an easy to use, selective insect growth regulator with attributes well-suited to managing whitefly populations. Admiral contains pyriproxyfen, a juvenile hormone mimic that interferes with whitefly reproduction and development. Juvenile hormone is secreted naturally in the early larval stages of insects and is responsible for maintaining larval characteristics. As juvenile hormone levels in the insects decrease and disappear over time, they progress on to later instars and ultimately pupate and emerge as adults. Juvenile hormone also controls insect ovary development. It is a pyridine-based pesticide which is found to be effective against a variety of arthropoda.",
+      "pest": ["Whitefly","Thrips", "Leaf hopper"]
+    },
+    {
+      "name": "Advantage 20EC",
+      "chemical": "Carbosulfan",
+      "crop": ["Cotton", "Apple", "Rice"],
+      "dose": "1000-500 ml",
+      "description": "Advantage 20%EC is a broad spectrum insecticide for insect control in several crops. Advantage is a systemic, broad-spectrum carbamate insecticide registered in more than 80 countries. Advantage is a unique chemistry provides superior control of pests in rice cotton and other crops to maximize yield and quality. The protection provided by Advantage helps the farmer to fight off most of the sucking and lepidopterous insect pests like aphids, thrips, hoppers, borers etc",
+      "pest": ["Bollworms", "Jassid", "Aphid Plant hoppers Codling Moth"]
+    },
+    {
+      "name": "Commando Plus",
+      "chemical": "Acephate",
+      "crop": ["Maize", "Cotton"],
+      "dose": "300 g",
+      "description": "Commando Plus 97% is a Broad-spectrum organophosphorus that is consistently one of the largest selling insecticides on the global market. Commando Plus has 22% more active ingredient than other products available in the market, which makes it a superior product. Its DF formulation makes it a relatively a safer product for farmer usage. It has complete control on thrips and jassid in cotton.",
+      "pest": ["Shootfly", "Thrips", "Jassids"]
+    },
+    {
+      "name": "Novastar 56EC",
+      "chemical": "Abamectin",
+      "crop": ["Potato", "Cotton", "Apple", "Mungbeans", "Citrus"],
+      "dose": "500-600 ml",
+      "description": "Novastar is another star brand of FMC Pakistan which is a bi-product of two highly effective chemicals, Bifenthrin & Abamectin. Both Bifenthrin and Abamectin act on insects by interfering with their neural and neuromuscular transmissions, complimenting each others effect to enhance efficacy. That is why it is a single solution to wide spectrum of pests including sucking, bollworms and mites. Novastar is highly established on Cotton, Orchards and Vegetables",
+      "pest": ["Jassid", "Thrips", "SBW", "ABW  Mites", "Leafminor"]
+    },
+    {
+      "name": "Talstar 10EC",
+      "chemical": "Biphenthrin",
+      "crop": ["Cotton", "Citrus Mango", "Canola", "Sugarcane", "Apple"],
+      "dose": "200-250 ml",
+      "description": "Talstar is one of the star brands of FMC that has been creating wonders for farmers for more than three decades. Its universal usage and high effectiveness have made it top the mind priority of many so much so that it is considered the face of FMC today. Talstar consists of Bifenthrin, a pyrethroid insecticide, that works by disrupting the nervous systems of insects. Talstar counters all the sucking pests, boll worms, mealy bugs, black bugs and mites. Well rounded nature of Talstar makes it viable for multiple crops including Cotton, Orchards and Sugarcane to name a few. Talstar also gives unusual shine to crops it is sprayed, coupled with its ability to keep pests away from fields, make Talstar one of the most sought after insecticide in the country.",
+      "pest": [
+        "Bollworms",
+        "Jassid",
+        " Whitefly",
+        "mites",
+        "Leaf minor",
+        "Hopper Aphid",
+        "Termites",
+        "Spider mites"
+      ]
+    },
+    {
+      "name": "Telsta 20SC",
+      "chemical": "Clothianidin",
+      "crop": ["Rice"],
+      "dose": "200 ml",
+      "description": "Telsta is an insecticide developed by Takeda Chemical Industries and Bayer AG. Similar to thiamethoxam and imidacloprid, it is a neonicotinoid. Clothianidin and other neonicotinoids act on the central nervous system of insects as an agonist of acetylcholine, the neurotransmitter that stimulates nAChR, targeting the same receptor site (AChR) and activating post-synaptic acetylcholine receptors but not inhibiting AChE. Clothianidin is an alternative to organophosphate, carbamate, and pyrethroid pesticides. It poses lower risks to mammals, including humans, when compared to organophosphates and carbamates. It has helped prevent insect pests build up resistance to organophosphate and pyrethroid pesticides.",
+      "pest": ["Rice Hopper"]
+    }
+  ]
+}

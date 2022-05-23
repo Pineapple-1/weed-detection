@@ -5,7 +5,6 @@ import Post from "../post/post";
 import api from "../../api/index";
 import Card from '../card/card'
 import Grid from "@mui/material/Grid";
-import Table from "../table/table"
 import Typography from '@mui/material/Typography';
 import Fork from '../../assets/loading.PNG'
 

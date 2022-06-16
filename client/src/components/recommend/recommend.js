@@ -27,9 +27,9 @@ const Recommend = () => {
       <main>
         <Container  maxWidth="md">
           {/* End hero unit */}
-          <h2>Herbiside Product List</h2>
+          <h2>Herbicide Product List</h2>
 
-            {herb?<Table name={"Herbiside"} data={herb}/>:null}
+            {herb?<Table name={"Herbicide"} data={herb}/>:null}
         
         </Container>
       </main>

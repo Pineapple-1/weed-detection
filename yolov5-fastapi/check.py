@@ -1,25 +1,34 @@
-from segmentation import get_yolov5, get_image_from_bytes
+from segmentation import get_yolov5, get_image_from_bytes, get_pest_yolov5
 from PIL import Image
-import io
 import os
-import random
+import torch
+import json
 
-IMAGEDIR = "fastapi-images/"
-
+IMAGEDIR = "C:/Users/abdul/Desktop/batch_test"
+RESULTSARR=[]
+#results = model('./image1.jpg')
+#results.render()  # updates results.imgs with boxes and labels
 model = get_yolov5()
-results = model('./image1.jpg')
-results.render()  # updates results.imgs with boxes and labels
-for img in results.imgs:
-    bytes_io = io.BytesIO()
-    img_base64 = Image.fromarray(img)
-    img_base64.save(bytes_io, format="jpeg")
+# Model
+imgs =[]
+# Images
+dir = 'https://ultralytics.com/images/'
+#imgs = [IMAGEDIR + f for f in IMAGEDIR]  # batch of images
+for filename in os.listdir(IMAGEDIR):
+    f = os.path.join(IMAGEDIR, filename)
+    # checking if it is a file
+    if os.path.isfile(f):
+        im=Image.open(f)
+        imgs.append(f)
+print(imgs)
+# Inference
+results = model(imgs)
+list = results.pandas().xyxy.to_json(orient="records")
+
+for x in list:
+    RESULTSARR.append(x.to_json(orient="records"))
 
 
-mylist = ["apple", "banana", "cherry"]
+#res = json.loads(RESULTSARR)
 
-rand = random.choice(mylist)
-img_base64.save(IMAGEDIR+rand+'.jpeg')
-files = os.listdir(IMAGEDIR)
-path = f"{IMAGEDIR}{rand+'.jpeg'}"
-
-print(path)
+print(list)

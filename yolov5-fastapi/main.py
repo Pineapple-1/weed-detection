@@ -1,6 +1,6 @@
-from fastapi import FastAPI, File
+from fastapi import FastAPI, File, UploadFile
 from fastapi.param_functions import Path
-from segmentation import get_yolov5, get_image_from_bytes, get_pest_yolov5
+from segmentation import get_yolov5, get_image_from_bytes, get_pest_yolov5,get_image_from_bytes_array
 from starlette.responses import Response
 import io
 from PIL import Image
@@ -15,7 +15,9 @@ import random
 model = get_yolov5()
 pest_model = get_pest_yolov5()
 IMAGEDIR = "fastapi-images/"
-mylist = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r']
+BATCHDIR = ""
+
+mylist = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v','w','x','y','z']
 
 app = FastAPI(
     title="Object Detection Api",
@@ -125,3 +127,26 @@ def product_list():
     file.close()
     return json_data
 
+
+
+@app.post("/batch")
+def img(path:str):
+    BATCHDIR= path
+    model = get_yolov5()
+    # Model
+    imgs =[]
+    # Images
+    #imgs = [IMAGEDIR + f for f in IMAGEDIR]  # batch of images
+    for filename in os.listdir(BATCHDIR):
+        f = os.path.join(BATCHDIR, filename)
+        # checking if it is a file
+        if os.path.isfile(f):
+            im=Image.open(f)
+            imgs.append(f)
+    print(imgs)
+    # Inference
+    results = model(imgs)
+    results.print() 
+    res = results.pandas().xyxy[0].to_json(orient="records")
+    res = json.loads(res)
+    return {"msg":res}

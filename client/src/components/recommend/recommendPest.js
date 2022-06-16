@@ -28,9 +28,9 @@ const RecommendPest = () => {
       <main>
         <Container  maxWidth="md">
           {/* End hero unit */}
-          <h2>Insectiside Product List</h2>
+          <h2>Insecticide Product List</h2>
 
-            {product?<Table name={"Insectiside"} data={product}/>:null}
+            {product?<Table name={"Insecticide"} data={product}/>:null}
         
         </Container>
       </main>

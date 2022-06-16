@@ -16,7 +16,7 @@ import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
 import {Email} from '../email/email'
 
-function Row({ data }) {
+function Row({ data ,name}) {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -70,7 +70,7 @@ function Row({ data }) {
               >
                 <Grid item>
                   {" "}
-                  <strong>Disease/Pest</strong>
+                  {name==="Herbicide"?<strong>Disease/Weed</strong>:<strong>Disease/Pest</strong>}
                 </Grid>
                 {data.pest.map((tag) =>
                   tag ? (
@@ -117,7 +117,7 @@ export default function CollapsibleTable({ data,name }) {
         <TableBody>
           {console.log(data)}
           {data.map((item) => (
-            <Row data={item} />
+            <Row data={item} name={name} />
           ))}
         </TableBody>
       </Table>

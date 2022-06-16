@@ -39,7 +39,7 @@ export default function MediaControlCard({raw}) {
               >
                 <Link sx={{ mt: 2, textDecoration: "none",color:"#0288d1" }} href="/product/Insectiside">
                   {" "}
-                  See Recomendations !!!
+                  See Recomendations !
                 </Link>
               </Typography>
         </CardContent>

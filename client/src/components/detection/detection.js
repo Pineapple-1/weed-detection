@@ -7,8 +7,7 @@ import Card from '../card/card'
 import Grid from "@mui/material/Grid";
 import Typography from '@mui/material/Typography';
 import Fork from '../../assets/loading.PNG'
-
-
+import Model from '../card/selectmodelcard'
 export default function Detection() {
   const [File, setFile] = useState("");
   const [Data, setData] = useState("");
@@ -59,6 +58,7 @@ export default function Detection() {
           sx={{mt:1}}
         >
           <Grid item md={9.6}>
+            
           <h2>Weed Detection</h2>
           
           </Grid>
@@ -66,6 +66,10 @@ export default function Detection() {
           <Post setFile={setFile} setData={setData} />
 
           </Grid>
+
+
+          <Model/>
+
           </Grid>
           
          
@@ -101,7 +105,7 @@ export default function Detection() {
         </Grid>):null}
         <center>
           
-        {File?null:<img  alt="fork"  src={Fork} style={{maxWidth:"500px",objectFit: "contain" }}/>}
+        {/*File?null:<img  alt="fork"  src={Fork} style={{maxWidth:"500px",objectFit: "contain" }}/>*/}
 
 
         </center>

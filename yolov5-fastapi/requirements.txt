@@ -94,8 +94,6 @@ urllib3>=1.26.7
     # via requests
 uvicorn[standard]>=0.15.0
     # via -r requirements.in
-uvloop==0.16.0
-    # via uvicorn
 watchgod>=0.7
     # via uvicorn
 websockets>=10.0

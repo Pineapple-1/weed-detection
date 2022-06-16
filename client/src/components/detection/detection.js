@@ -12,12 +12,14 @@ export default function Detection() {
   const [File, setFile] = useState("");
   const [Data, setData] = useState("");
   const [raw, setRaw] = useState('');
+  const [body,setBody] = useState('C:/Users/hamza/Desktop/test')
 
 
   useEffect(() => {
     async function fetchData() {
       let formData = new FormData();
       formData.append("file", File);
+
 
 
       const res = await api
@@ -28,10 +30,11 @@ export default function Detection() {
         .post("/object-to-json", formData, {
           headers: { "content-type": "multipart/form-data" },
         })
+        
 
-       
       console.log(res);
       console.log(response)
+
 
       setData(res.data);
       setRaw(response.data.result)

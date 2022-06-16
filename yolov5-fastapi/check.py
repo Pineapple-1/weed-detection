@@ -4,7 +4,7 @@ import os
 import torch
 import json
 
-IMAGEDIR = "C:/Users/abdul/Desktop/batch_test"
+IMAGEDIR = "C:/Users/hamza/Desktop/test"
 RESULTSARR=[]
 #results = model('./image1.jpg')
 #results.render()  # updates results.imgs with boxes and labels
@@ -23,12 +23,13 @@ for filename in os.listdir(IMAGEDIR):
 print(imgs)
 # Inference
 results = model(imgs)
-list = results.pandas().xyxy.to_json(orient="records")
+hello = results.pandas().xyxy
 
-for x in list:
-    RESULTSARR.append(x.to_json(orient="records"))
+list = results.pandas().xyxy[0].to_json(orient="records")
+list1 = results.pandas().xyxy[1].to_json(orient="records")
 
 
-#res = json.loads(RESULTSARR)
 
-print(list)
+res = json.load(list+list1)
+print(res)
+

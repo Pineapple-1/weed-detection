@@ -130,7 +130,7 @@ def product_list():
 
 
 @app.post("/batch")
-def img(path:str):
+def detect_batch(path: str):
     BATCHDIR= path
     model = get_yolov5()
     # Model
@@ -148,5 +148,7 @@ def img(path:str):
     results = model(imgs)
     results.print() 
     res = results.pandas().xyxy[0].to_json(orient="records")
-    res = json.loads(res)
-    return {"msg":res}
+    res1 = results.pandas().xyxy[1].to_json(orient="records")
+    final = res+res1
+   
+    return {"msg":final}
